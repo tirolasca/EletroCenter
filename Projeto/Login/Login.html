@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+          rel="stylesheet"
+        />
+        <link rel="stylesheet" href="Login.css" />
+      </head>
+      <body>
+        <header class="header-content">
+          <a href="homepage.html">
+            <img src="Logo2.jpg" alt="Logo" />
+          </a>
+        </header>
+        <nav>
+          <a href="#">Categorias</a>
+          <a href="#">Novidades</a>
+          <a href="#">Ofertas</a>
+          <a href="#">Melhores Vendas</a>
+          <a href="#">Promoções</a>
+          <a href="#">Acessórios</a>
+          <a href="#">Sobre Nós</a>
+          <a href="#">Ajuda</a>
+          <a href="#">Contato</a>
+        </nav>
+        <div class="container">
+          <h2>Login</h2>
+          <form action="processar_cadastro.php" method="post">
+            <div class="form-group">
+              <label for="email">E-mail ou Nome de Usuario:</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="senha">Senha:</label>
+              <input type="password" id="senha" name="senha" required />
+            </div>
+            <div class="form-group">
+              <button type="submit">Logar</button>
+            </div>
+          </form>
+        </div>
+      </body>
+    </html>
+  </head>
+</html>
