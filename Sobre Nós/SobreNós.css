@@ -1,0 +1,126 @@
+/* Estilos gerais */
+body {
+    font-family: "Arial", sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #000000; /* Preto */
+    color: #ffffff; /* Branco para texto */
+}
+
+/* Estilo do cabeçalho */
+header {
+    background: #e84a60;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-content img {
+    max-width: 100%;
+    height: auto;
+    width: 300px; /* Largura máxima */
+}
+
+nav {
+    margin: 15px 0;
+}
+
+nav a {
+    margin: 0 15px;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    transition: color 0.3s, transform 0.3s;
+    position: relative;
+}
+
+nav a:hover {
+    color: #65afff;
+    transform: scale(1.05);
+}
+
+nav a:hover::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #65afff; /* Azul claro */
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s;
+}
+
+/* Estilo das seções */
+main {
+    padding: 20px;
+}
+
+section {
+    background: #1b2845; /* Azul forte */
+    margin: 15px 0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+}
+
+h2 {
+    border-bottom: 2px solid #e84a60; /* Vermelho */
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    color: #ffffff; /* Branco */
+}
+
+/* Estilo dos integrantes */
+.integrantes {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.integrantes div {
+    text-align: center;
+    margin: 10px;
+}
+
+.integrantes img {
+    border-radius: 50%;
+    margin: 5px;
+    transition: transform 0.3s;
+    border: 3px solid #e84a60; /* Vermelho */
+}
+
+.integrantes img:hover {
+    transform: scale(1.1);
+}
+
+/* Estilo do rodapé */
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #e84a60; /* Vermelho */
+    color: #ffffff; /* Branco */
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    nav a {
+        display: block; /* Coloca os links em coluna em telas menores */
+        margin: 5px 0;
+    }
+
+    .integrantes {
+        justify-content: center; /* Centraliza as imagens em telas pequenas */
+    }
+}
