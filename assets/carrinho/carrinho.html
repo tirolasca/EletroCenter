@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="carrinho.css">
+    <title>Carrinho de Compras</title>
+    <style>
+        .remove-item {
+            cursor: pointer;
+            color: red;
+            margin-left: 10px;
+        }
+        .remove-item:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="header-content">
+        <a href="http://127.0.0.1:5500/Homepage/homepage.html">
+            <img class="logo" src="Logo2.jpg" alt="Logo">
+        </a>
+    </div>
+    <nav>
+        <a href="http://127.0.0.1:5500/produtos/produtos.html">Produtos</a>
+        <a href="http://127.0.0.1:5500/produtos/produtos.html">Promoção</a>
+        <a href="http://127.0.0.1:5500/Parceiros/Parceiros.html">Parceiros</a>
+        <a href="http://127.0.0.1:5500/Suporte/Suporte.html">Suporte</a>
+        <a href="http://127.0.0.1:5500/Sobre%20N%C3%B3s/SobreN%C3%B3s.html">Sobre Nós</a>
+    </nav>
+</header>
+
+<div class="container">
+    <h1>Carrinho de Compras</h1>
+    <div class="cart-items" id="cart-items">
+        <!-- Os produtos serão carregados dinamicamente aqui -->
+    </div>
+    
+    <div class="total">
+        <h2>Total: <span id="cart-total">R$ 0,00</span></h2>
+    </div>
+    
+    <div class="payment">
+        <h2>Finalizar Compra</h2>
+        <a href="http://127.0.0.1:5500/Pagamentos/Pagamentos.html"><button class="checkout-button">Finalizar Compra</button></a>
+    </div>
+</div>
+
+<footer>
+    <p>© 2024 Loja de Eletrônicos<br><br> Todos os direitos reservados</p>
+</footer>
+
+<script>
+    // Função para carregar os itens do carrinho
+    function loadCartItems() {
+        const cartItemsContainer = document.getElementById('cart-items');
+        const cartTotal = document.getElementById('cart-total');
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let totalPrice = 0;
+
+        // Limpa o conteúdo anterior
+        cartItemsContainer.innerHTML = '';
+
+        // Verifica se o carrinho está vazio
+        if (cart.length === 0) {
+            cartItemsContainer.innerHTML = '<p>O carrinho está vazio.</p>';
+            cartTotal.textContent = 'R$ 0,00';
+            return;
+        }
+
+        // Cria elementos para cada item no carrinho
+        cart.forEach((item, index) => {
+            const cartItemDiv = document.createElement('div');
+            cartItemDiv.classList.add('cart-item');
+
+            const imgElement = document.createElement('img');
+            imgElement.src = item.image;
+            imgElement.alt = item.name;
+
+            const detailsDiv = document.createElement('div');
+            detailsDiv.classList.add('item-details');
+
+            const nameElement = document.createElement('h3');
+            nameElement.textContent = item.name;
+
+            const priceElement = document.createElement('p');
+            priceElement.classList.add('item-price');
+            priceElement.textContent = 'R$ ' + parseFloat(item.price).toFixed(2);
+
+            const quantityElement = document.createElement('p');
+            quantityElement.classList.add('item-quantity');
+            quantityElement.innerHTML = `Quantidade: <span>${item.quantity}</span>`;
+
+            // Botão de remover item
+            const removeButton = document.createElement('span');
+            removeButton.classList.add('remove-item');
+            removeButton.innerHTML = '🗑️ Remover';
+            removeButton.onclick = () => removeCartItem(index);
+
+            detailsDiv.appendChild(nameElement);
+            detailsDiv.appendChild(priceElement);
+            detailsDiv.appendChild(quantityElement);
+            detailsDiv.appendChild(removeButton);
+
+            cartItemDiv.appendChild(imgElement);
+            cartItemDiv.appendChild(detailsDiv);
+            
+            cartItemsContainer.appendChild(cartItemDiv);
+
+            // Calcula o total
+            totalPrice += item.price * item.quantity;
+        });
+
+        // Atualiza o total
+        cartTotal.textContent = 'R$ ' + totalPrice.toFixed(2);
+    }
+
+    // Função para remover um item do carrinho
+    function removeCartItem(index) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Remove o item pelo índice
+        cart.splice(index, 1);
+
+        // Atualiza o localStorage com o novo carrinho
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        // Recarrega os itens do carrinho na página
+        loadCartItems();
+    }
+
+    // Carregar os itens do carrinho ao abrir a página
+    window.onload = loadCartItems;
+</script>
+
+</body>
+</html>

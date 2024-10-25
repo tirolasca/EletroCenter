@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="stylesheet" href="produtos.css" />
+    <title>Loja de Produtos</title>
+  </head>
+  <body>
+    <header>
+      <a href="http://127.0.0.1:5500/Homepage/homepage.html">
+        <img src="Logo2.jpg" alt="Logo" class="logo" />
+      </a>
+
+      <input
+        class="search-input"
+        type="text"
+        placeholder="Pesquisar..."
+        aria-label="Pesquisar"
+      />
+      <button class="search-button" type="submit">Buscar</button>
+      <div class="login-icon" title="Login"></div>
+      <div id="cart-icon" class="cart-icon"></div>
+      <!-- Ícone de carrinho -->
+
+      <nav>
+        <a href="http://127.0.0.1:5500/produtos/produtos.html">Produtos</a>
+        <a href="http://127.0.0.1:5500/produtos/produtos.html">Promoção</a>
+        <a href="http://127.0.0.1:5500/Parceiros/Parceiros.html">Parceiros</a>
+        <a href="http://127.0.0.1:5500/Suporte/Suporte.html">Suporte</a>
+        <a href="http://127.0.0.1:5500/Sobre%20N%C3%B3s/SobreN%C3%B3s.html"
+          >Sobre Nós</a
+        >
+      </nav>
+    </header>
+    <main>
+      <h1>Produtos</h1>
+      <div class="container">
+        <div class="product-list">
+          <div class="product">
+            <img src="/Homepage/PRODUTOS/monitor_acer_27.png" alt="Produto 1" />
+            <div class="product-details">
+              <h2>Monitor Acer</h2>
+              <p>
+                Nunca mais perca um frag: seu reflexo e sua performance vão
+                ficar ainda melhores com a taxa de atualização de até 100Hz.
+                Desfrute de imagens sem rastros e engasgos. Com tempo de
+                resposta de até 1ms VRB, suas jogatinas serão mais fluidas,
+                ininterruptas e incomparáveis.
+              </p>
+              <div class="price">R$ 100,00</div>
+              <a
+                href="http://127.0.0.1:5500/detalhe%20do%20produto2/detalhe2.html"
+                ><button>Detalhes</button></a
+              >
+            </div>
+          </div>
+          <div class="product">
+            <img
+              src="/Homepage/Imagens - Homepage/Gabinete-Gamer-Hayom-4-Fans-rgb-Lateral-e-Frontal-Em-Vidro-Temperado-Preto-GB1749/IMAGEM1(1).jpg"
+              alt="Produto 2"
+            />
+            <div class="product-details">
+              <h2>Gabinete RGB</h2>
+              <p>componentes e periféricos que vêm equipados de fábrica com LEDs RGB, permitindo o ajuste de cores de acordo com a preferência do usuário.</p>
+              <div class="price">R$ 150,00</div>
+              <a
+                href="http://127.0.0.1:5500/detalhe%20do%20produto/detalhe.html"
+                ><button>Detalhes</button></a>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p>&copy; 2024 EletroCenter. Todos os direitos reservados.</p>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Adiciona o evento de submit ao formulário
+        document
+          .getElementById("loginForm")
+          .addEventListener("submit", function (event) {
+            event.preventDefault(); // Impede o envio do formulário
+
+            const emailInput = document.getElementById("email").value; // Obtém o valor do email
+
+            // Exibe a mensagem de boas-vindas
+            const welcomeMessage = document.getElementById("welcomeMessage");
+            welcomeMessage.textContent = `Bem-vindo, ${emailInput}!`;
+            welcomeMessage.style.display = "block"; // Torna a mensagem visível
+
+            // Opcional: Limpar o formulário
+            document.getElementById("loginForm").reset();
+          });
+      });
+      document
+        .querySelector(".login-icon")
+        .addEventListener("click", function () {
+          window.location.href = "http://127.0.0.1:5500/Login/Login.html"; // URL da página de login
+        });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // Seleciona o ícone do carrinho
+        const cartIcon = document.getElementById("cart-icon");
+
+        // Adiciona um evento de clique ao ícone do carrinho
+        cartIcon.addEventListener("click", function () {
+          // Redireciona para a página do carrinho
+          window.location.href = "http://127.0.0.1:5500/carrinho/carrinho.html"; // Substitua pelo URL correto
+        });
+      });
+    </script>
+  </body>
+</html>

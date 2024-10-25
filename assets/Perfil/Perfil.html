@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Usuário - Loja de Eletrônicos</title>
+    <link rel="stylesheet" href="Perfil.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<body>
+    <header>
+        <div class="header-content">
+            <a href="http://127.0.0.1:5500/Homepage/homepage.html">
+                <img src="logo2.jpg" alt="Logo" class="logo">
+            </a>
+
+            <nav>
+                <a href="http://127.0.0.1:5500/produtos/produtos.html">Produtos</a>
+                <a href="http://127.0.0.1:5500/produtos/produtos.html">Promoção</a>
+                <a href="http://127.0.0.1:5500/Parceiros/Parceiros.html">Parceiros</a>
+                <a href="http://127.0.0.1:5500/Suporte/Suporte.html">Suporte</a>
+                <a href="http://127.0.0.1:5500/Sobre%20N%C3%B3s/SobreN%C3%B3s.html">Sobre Nós</a>
+            </nav>
+
+           
+            <div id="cart-icon" class="cart-icon"></div> <!-- Ícone de carrinho -->
+                
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>Perfil do Usuário</h1>
+
+        <section class="section">
+            <h2>Informações Pessoais</h2>
+            <div class="user-info">
+                <div>
+                    <p><strong>Nome:</strong> João da Silva</p>
+                    <p><strong>E-mail:</strong> joao@email.com</p>
+                </div>
+                <div>
+                    <p><strong>Telefone:</strong> (11) 99999-9999</p>
+                    <p><strong>Endereço:</strong> Rua Exemplo, 123, São Paulo - SP</p>
+                </div>
+            </div>
+            <button class="button">Editar Perfil</button>
+        </section>
+
+        <section class="section">
+            <h2>Histórico de Compras</h2>
+            <ul>
+                <li>Smartphone X - R$ 1.999,00</li>
+                <li>Laptop Y - R$ 3.499,00</li>
+                <li>Câmera Z - R$ 1.200,00</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Favoritos</h2>
+            <ul>
+                <li>Fone C - R$ 299,00</li>
+                <li>Tablet A - R$ 1.200,00</li>
+            </ul>
+        </section>
+
+        <footer class="footer">
+            <p>&copy; 2024 Loja de Eletrônicos | <a href="#">Sobre Nós</a></p>
+        </footer>
+    </main>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          // Adiciona o evento de submit ao formulário
+          document
+            .getElementById("loginForm")
+            .addEventListener("submit", function (event) {
+              event.preventDefault(); // Impede o envio do formulário
+  
+              const emailInput = document.getElementById("email").value; // Obtém o valor do email
+  
+              // Exibe a mensagem de boas-vindas
+              const welcomeMessage = document.getElementById("welcomeMessage");
+              welcomeMessage.textContent = `Bem-vindo, ${emailInput}!`;
+              welcomeMessage.style.display = "block"; // Torna a mensagem visível
+  
+              // Opcional: Limpar o formulário
+              document.getElementById("loginForm").reset();
+            });
+        });
+        document.querySelector('.login-icon').addEventListener('click', function() {
+          window.location.href = "http://127.0.0.1:5500/Perfil/Perfil.html"; // URL da página de login
+      });
+  
+      document.addEventListener("DOMContentLoaded", function() {
+          // Seleciona o ícone do carrinho
+          const cartIcon = document.getElementById("cart-icon");
+          
+          // Adiciona um evento de clique ao ícone do carrinho
+          cartIcon.addEventListener("click", function() {
+              // Redireciona para a página do carrinho
+              window.location.href = "http://127.0.0.1:5500/carrinho/carrinho.html"; // Substitua pelo URL correto
+          });
+      });
+      </script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sobre Nós</title>
+    <link rel="stylesheet" href="SobreNós.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  </head>
+  <body>
+    <header>
+      <a href="http://127.0.0.1:5500/Homepage/homepage.html">
+          <img src="./Imagem/logo2.jpg" alt="Logo" class="logo" height="100"/>
+      </a>
+      
+
+      <nav>
+          <a href="http://127.0.0.1:5500/produtos/produtos.html">Produtos</a>
+          <a href="http://127.0.0.1:5500/produtos/produtos.html">Promoção</a>
+          <a href="http://127.0.0.1:5500/Parceiros/Parceiros.html">Parceiros</a>
+          <a href="http://127.0.0.1:5500/Suporte/Suporte.html">Suporte</a>
+          <a href="http://127.0.0.1:5500/Sobre%20N%C3%B3s/SobreN%C3%B3s.html">Sobre Nós</a>
+      </nav>
+  </header>
+
+    <main>
+        <section id="sobre">
+            <h2>Quem Somos</h2>
+            <p>Conheça os integrantes da nossa equipe!</p>
+            <div class="integrantes">
+                <div>
+                    <img src="./Imagem/deivide.jpg"  alt="deivide" width="200" height="200">
+                    <p>Deivide</p>
+                </div>
+                <div>
+                    <img src="./Imagem/pedro.jpg"  alt="pedro" width="200" height="200">
+                    <p>Pedro</p>
+                </div>
+                <div>
+                    <img src="./Imagem/lucas.png" alt="Lucas" width="200" height="200">
+                    <p>Lucas</p>
+                </div>
+                <div>
+                    <img src="./Imagem/fabricio.jpg" alt="Fabrício" width="200" height="200">
+                    <p>Fabrício</p>
+                </div>
+                <div>
+                    <img src="./Imagem/enzo.PNG" alt="Enzo" width="200" height="200">
+                    <p>Enzo</p>
+                </div>
+            </div>
+        </section>
+        
+
+      <section id="servicos">
+        <h2>O que Oferecemos</h2>
+        <ul>
+          <li><strong>Serviço 1:</strong> Consultoria em eletrônicos.</li>
+          <li>
+            <strong>Serviço 2:</strong> Venda de produtos de alta qualidade.
+          </li>
+          <li><strong>Serviço 3:</strong> Suporte técnico especializado.</li>
+        </ul>
+      </section>
+
+      <section id="historia">
+        <h2>Nossa História</h2>
+        <p>
+          Em um ambiente iluminado e colaborativo, um grupo de programadores se
+          reuniu para dar início a um projeto desafiador. A equipe, composta por
+          cinco membros, estava animada para desenvolver um site de vendas de
+          eletronicos.
+        </p>
+      </section>
+
+      
+
+    <footer>
+      <p>&copy; 2024 EletroCenter. Todos os direitos reservados.</p>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Adiciona o evento de submit ao formulário
+        document
+          .getElementById("loginForm")
+          .addEventListener("submit", function (event) {
+            event.preventDefault(); // Impede o envio do formulário
+
+            const emailInput = document.getElementById("email").value; // Obtém o valor do email
+
+            // Exibe a mensagem de boas-vindas
+            const welcomeMessage = document.getElementById("welcomeMessage");
+            welcomeMessage.textContent = `Bem-vindo, ${emailInput}!`;
+            welcomeMessage.style.display = "block"; // Torna a mensagem visível
+
+            // Opcional: Limpar o formulário
+            document.getElementById("loginForm").reset();
+          });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,216 @@
+/* Estilos Gerais */
+body {
+    font-family: 'Arial', sans-serif; /* Fonte padrão */
+    margin: 0; /* Remove margens padrão */
+    padding: 0; /* Remove preenchimento padrão */
+    background-color: #000000; /* Cor de fundo preta */
+}
+
+img {
+    height: 60px; /* Altura fixa para imagens */
+    width: auto; /* Mantém a proporção */
+    padding-right: 15px; /* Espaçamento à direita */
+}
+
+/* Estilo do Cabeçalho */
+header {
+    background: #e84a60; /* Cor do cabeçalho */
+    color: #000000; /* Cor do texto */
+    padding: 20px; /* Espaçamento interno */
+    text-align: center; /* Alinha o texto ao centro */
+    position: relative; /* Para efeitos adicionais */
+    font-family: "Anton", sans-serif; /* Fonte do cabeçalho */
+    font-weight: 400; /* Peso da fonte */
+}
+
+.header-content {
+    display: flex; /* Usa Flexbox para o conteúdo do cabeçalho */
+    align-items: center; /* Alinha verticalmente ao centro */
+    justify-content: center; /* Alinha horizontalmente ao centro */
+    margin-bottom: 15px; /* Espaço abaixo do cabeçalho */
+}
+
+/* Navegação */
+nav {
+    margin: 15px 0; /* Espaçamento acima e abaixo da navegação */
+}
+
+nav a {
+    margin: 0 15px; /* Espaçamento horizontal entre links */
+    color: #000000; /* Cor dos links */
+    text-decoration: none; /* Remove sublinhado */
+    font-family: "Anton", sans-serif; /* Fonte dos links */
+    font-weight: 400; /* Peso da fonte dos links */
+    transition: color 0.3s, transform 0.3s; /* Efeito de transição suave */
+    position: relative; /* Para efeito de sublinhado */
+}
+
+nav a:hover {
+    color: #65afff; /* Cor ao passar o mouse */
+    transform: scale(1.05); /* Aumenta ligeiramente ao passar o mouse */
+}
+
+nav a:hover::after {
+    content: ''; /* Cria um pseudo-elemento */
+    display: block; /* Exibe como um bloco */
+    width: 100%; /* Largura total */
+    height: 2px; /* Altura do sublinhado */
+    background: #65afff; /* Cor do sublinhado */
+    position: absolute; /* Para posicionar o sublinhado */
+    bottom: -5px; /* Posiciona abaixo do link */
+    left: 0; /* Alinha à esquerda */
+    transition: width 0.3s; /* Transição suave para o sublinhado */
+}
+
+/* Container Principal */
+.container {
+    max-width: 800px; /* Largura máxima */
+    margin: 20px auto; /* Margens superior/inferior e centraliza */
+    padding: 20px; /* Espaçamento interno */
+    background-color: #1B2845; /* Cor de fundo do container */
+    border-radius: 12px; /* Bordas arredondadas */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    color: #fff; /* Cor do texto */
+}
+
+/* Estilo de Títulos */
+h2 {
+    color: #fff; /* Cor do título */
+    margin-bottom: 20px; /* Espaçamento abaixo do título */
+    text-align: center; /* Alinha o título ao centro */
+    font-size: 2.5rem; /* Tamanho do título */
+    text-transform: uppercase; /* Maiúsculas */
+    letter-spacing: 1px; /* Espaçamento entre letras */
+}
+
+/* Estilo do Formulário */
+form {
+    display: flex; /* Usa Flexbox para o formulário */
+    flex-direction: column; /* Coloca itens em coluna */
+}
+
+label {
+    margin-top: 15px; /* Espaçamento acima do rótulo */
+    font-weight: bold; /* Negrito */
+    font-size: 1.1rem; /* Tamanho da fonte do rótulo */
+}
+
+input,
+textarea {
+    margin-top: 5px; /* Espaçamento acima do campo */
+    padding: 12px; /* Preenchimento interno */
+    border: 1px solid #ddd; /* Borda padrão */
+    border-radius: 5px; /* Bordas arredondadas */
+    font-size: 1em; /* Tamanho da fonte */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Transição suave */
+}
+
+input:focus,
+textarea:focus {
+    border-color: #e84a60; /* Cor da borda ao focar */
+    outline: none; /* Remove contorno padrão */
+    box-shadow: 0 0 5px rgba(232, 74, 96, 0.5); /* Sombra ao focar */
+}
+
+button {
+    margin-top: 20px; /* Espaçamento acima do botão */
+    padding: 12px; /* Preenchimento interno */
+    background-color: #e91e63; /* Cor do botão */
+    color: #fff; /* Cor do texto */
+    border: none; /* Remove borda */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Indica que é clicável */
+    font-size: 1em; /* Tamanho da fonte */
+    transition: background-color 0.3s, transform 0.2s; /* Transição suave */
+}
+
+button:hover {
+    background-color: #d81b60; /* Tom mais escuro ao passar o mouse */
+    transform: scale(1.05); /* Aumenta ligeiramente ao passar o mouse */
+}
+
+/* Estilo das Perguntas Frequentes */
+.faq {
+    margin-top: 20px; /* Espaçamento acima da seção FAQ */
+}
+
+.faq-item {
+    margin-bottom: 15px; /* Espaçamento abaixo de cada item FAQ */
+    padding: 15px; /* Preenchimento interno */
+    border: 1px solid #fff; /* Borda branca */
+    border-radius: 5px; /* Bordas arredondadas */
+    background-color: #1B2845; /* Cor de fundo do item FAQ */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Transição suave */
+}
+
+.faq-item:hover {
+    background-color: #f1f1f1; /* Cor de fundo ao passar o mouse */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra ao passar o mouse */
+}
+
+.faq-item h3 {
+    margin: 0; /* Remove margens */
+    cursor: pointer; /* Indica que é clicável */
+    color: #007bff; /* Cor do título da FAQ */
+    font-size: 1.3rem; /* Tamanho do título da FAQ */
+    transition: color 0.3s; /* Transição suave para a cor */
+}
+
+.faq-item h3:hover {
+    color: #0056b3; /* Tom mais escuro ao passar o mouse */
+}
+
+.faq-item p {
+    margin: 5px 0 0 0; /* Margens do parágrafo */
+    display: none; /* Inicialmente oculto */
+    color: #fff; /* Cor do texto */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px; /* Reduz o preenchimento em telas menores */
+    }
+
+    h2 {
+        font-size: 2rem; /* Ajusta o tamanho do título em telas menores */
+    }
+
+    button {
+        padding: 10px; /* Ajusta o preenchimento do botão */
+    }
+}
+
+/* Ícone de Login */
+.login-icon {
+    width: 50px; /* Tamanho da bolinha */
+    height: 50px; /* Tamanho da bolinha */
+    background-color: #FFFF; /* Cor da bolinha */
+    border-radius: 50%; /* Faz a bolinha ser redonda */
+    display: inline-block; /* Para alinhar corretamente */
+    position: relative; /* Para posicionar ícones dentro da bolinha */
+    cursor: pointer; /* Para indicar que é clicável */
+    margin-left: 50px; /* Espaçamento à esquerda */
+}
+
+/* Ícone dentro da bolinha de login */
+.login-icon::before {
+    content: '\f007'; /* Código Unicode para um ícone de usuário */
+    font-family: 'Font Awesome 5 Free'; /* Biblioteca de ícones */
+    font-weight: 900; /* Estilo do ícone */
+    color: rgb(0, 0, 0); /* Cor do ícone */
+    position: absolute; /* Para centralizar o ícone */
+    top: 50%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Ajuste para centralização */
+}
+
+/* Ícone de Carrinho */
+.cart-icon {
+    width: 50px; /* Tamanho da bolinha */
+    height: 50px; /* Tamanho da bolinha */
+    background-color: #FFFF; /* Cor da bolinha */
+    border-radius: 50%; /* Faz a bolinha ser redonda */
+    display: inline-block; /* Para */
+
+}
