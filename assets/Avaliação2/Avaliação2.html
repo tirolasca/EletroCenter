@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="Avaliação2.css" />
+    <!-- Link para o CSS externo -->
+    <title>Avaliação do Produto</title>
+  </head>
+  <body>
+    <header>
+      <div class="header-content">
+        <a href="http://127.0.0.1:5500/EletroCenter(atualizado)/Homepage/homepage.html">
+          <img src="/Avaliação/Logo2.jpg" alt="Logo" />
+        </a>
+        <input class="search-input" type="text" placeholder="Pesquisar..." aria-label="Pesquisar"/>
+        <button class="search-button" type="submit">Buscar</button>
+        <div class="login-icon" title="Login"></div>
+        <div id="cart-icon" class="cart-icon">
+        </div>
+      </div>
+      <nav>
+        <a href="http://127.0.0.1:5500/EletroCenter(atualizado)/produtos/produtos.html">Produtos</a>
+        <a href="http://127.0.0.1:5500/EletroCenter(atualizado)/produtos/produtos.html">Promoção</a>
+        <a href="http://127.0.0.1:5500/EletroCenter(atualizado)/Parceiros/Parceiros.html">Parceiros</a>
+        <a href="http://127.0.0.1:5500/EletroCenter(atualizado)/Suporte/Suporte.html">Suporte</a>
+        <a href="http://127.0.0.1:5500/EletroCenter(atualizado)/Sobre%20N%C3%B3s/SobreN%C3%B3s.html">Sobre Nós</a>
+    </nav>
+    </header>
+
+    <div class="container">
+      <h2>Avaliação do Produto: Monitor Acer 27</h2>
+
+      <div class="product-detail">
+        <img src="/Homepage/PRODUTOS/monitor_acer_27.png" alt="PC Gamer Completo" />
+        <div class="product-info">
+          <h3>Monitor Acer 27</h3>
+          <p class="price">
+            R$ 100,00
+          </p>
+          <p>
+            Descrição do produto:  Acer Adaptive Contrast Management: O Acer Adaptive Contrast Management (ACM) otimiza o contraste para oferecer o mais alto nível de clareza e detalhe, analisando todas as cenas, ajustando as imagens quadro a quadro e aprimorando detalhes e graduação.
+          </p>
+        </div>
+      </div>
+
+      <h3>Avaliações de Clientes</h3>
+      <div class="reviews">
+        <div class="review">
+          <p class="review-author">João Silva</p>
+          <div class="rating">★★★★★</div>
+          <p>Ótimo produto! O desempenho é incrível e a entrega foi rápida.</p>
+        </div>
+        <div class="review">
+          <p class="review-author">Maria Oliveira</p>
+          <div class="rating">★★★★☆</div>
+          <p>Gostei muito do monitor.</p>
+        </div>
+      </div>
+
+      <h3>Deixe sua Avaliação</h3>
+      <form class="review-form">
+        <label for="author">Seu Nome:</label>
+        <input type="text" id="author" name="author" required />
+
+        <label for="rating">Sua Avaliação:</label>
+        <select id="rating" name="rating" required>
+          <option value="5">★★★★★</option>
+          <option value="4">★★★★☆</option>
+          <option value="3">★★★☆☆</option>
+          <option value="2">★★☆☆☆</option>
+          <option value="1">★☆☆☆☆</option>
+        </select>
+
+        <label for="comment">Comentário:</label>
+        <textarea id="comment" name="comment" rows="4" required></textarea>
+
+        <button type="submit">Enviar Avaliação</button>
+      </form>
+    </div>
+
+    <footer>
+      <p>© 2024 Loja de Eletrônicos. Todos os direitos reservados.</p>
+      <p><a href="#" style="color: #fff">Sobre Nós</a></p>
+    </footer>
+    <script src="Script.js"></script>
+    <script>
+      document.querySelector('.login-icon').addEventListener('click', function() {
+          window.location.href = "/Login/Login.html"; // URL da página de login
+      });
+  
+      document.addEventListener("DOMContentLoaded", function() {
+          // Seleciona o ícone do carrinho
+          const cartIcon = document.getElementById("cart-icon");
+          
+          // Adiciona um evento de clique ao ícone do carrinho
+          cartIcon.addEventListener("click", function() {
+              // Redireciona para a página do carrinho
+              window.location.href = "/carrinho/carrinho.html"; // Substitua pelo URL correto
+          });
+      });
+  </script>
+  </body>
+</html>

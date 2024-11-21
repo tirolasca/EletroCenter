@@ -1,0 +1,190 @@
+/* Estilos Gerais */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000; /* Tom mais suave */
+}
+
+img {
+    height: 60px;
+    width: auto; /* Mantém a proporção */
+    padding-right: 15px;
+}
+
+header {
+    background: #e84a60; /* Cor do cabeçalho */
+    color: #000000;
+    padding: 20px;
+    text-align: center;
+    position: relative; /* Para efeitos adicionais */
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+nav {
+    margin: 15px 0;
+}
+
+nav a {
+    margin: 0 15px;
+    color: #000000;
+    text-decoration: none;
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    transition: color 0.3s, transform 0.3s;
+    position: relative; /* Para efeito de sublinhado */
+}
+
+nav a:hover {
+    color: #65afff;
+    transform: scale(1.05);
+}
+
+nav a:hover::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #65afff; /* Azul claro */
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s;
+}
+
+/* Container Principal */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #1B2845;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    color: #fff;
+}
+
+/* Estilo de Títulos */
+h2 {
+    color: #fff;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 2.5rem; /* Aumenta o tamanho do título */
+    text-transform: uppercase; /* Maiúsculas para destaque */
+    letter-spacing: 1px; /* Espaçamento entre letras */
+}
+
+/* Estilo do Formulário */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 1.1rem; /* Aumenta o tamanho da fonte do rótulo */
+}
+
+input {
+    margin-top: 5px;
+    padding: 12px; /* Aumenta o padding */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: border-color 0.3s, box-shadow 0.3s; /* Transição suave */
+}
+
+input:focus {
+    border-color: #e84a60;
+    outline: none;
+    box-shadow: 0 0 5px rgba(232, 74, 96, 0.5); /* Sombra ao focar */
+}
+
+button {
+    margin-top: 20px;
+    padding: 12px;
+    background-color: #e91e63; /* Cor do botão */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #d81b60; /* Tom mais escuro ao passar o mouse */
+    transform: scale(1.05);
+}
+
+/* Estilo das Perguntas Frequentes */
+.faq {
+    margin-top: 20px;
+  }
+  
+  .faq-item {
+    max-height: 60px;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    background-color: #1b2845;
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .faq-item:hover {
+    background-color: #f1f1f154;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .faq-item h3 {
+    margin: 0;
+    cursor: pointer;
+    color: #007bff;
+    font-size: 1.3rem;
+    transition: color 0.3s;
+  }
+  
+  .faq-item h3:hover {
+    color: #0056b3;
+  }
+  
+  .faq-item h3::after {
+    content: "▼";
+    float: right;
+    transition: transform 0.3s;
+  }
+  
+  .faq-item h3[aria-expanded="true"]::after {
+    transform: rotate(180deg);
+  }
+  
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    color: #fff;
+  }
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px; /* Reduz o padding em telas menores */
+    }
+
+    h2 {
+        font-size: 2rem; /* Ajusta o tamanho do título em telas menores */
+    }
+
+    button {
+        padding: 10px; /* Ajusta o padding do botão */
+    }
+}

@@ -1,0 +1,299 @@
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4; /* Cor de fundo suave */
+}
+
+header {
+    background: #e84a60; /* Cor do cabeçalho */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra do cabeçalho */
+    position: relative; /* Para efeitos adicionais */
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+header img {
+  height: 60px; /* Altura da imagem do header */
+  width: auto;
+  margin-right: 15px;
+}
+
+.search-input {
+  padding: 10px;
+  border: 1px solid #ccc; /* Borda padrão */
+  border-radius: 4px; /* Bordas arredondadas */
+  width: 300px; /* Largura da barra de busca */
+  transition: border-color 0.3s; /* Transição suave para foco */
+}
+
+.search-input:focus {
+  border-color: #e84a60; /* Borda ao focar */
+  outline: none; /* Remove contorno padrão */
+  box-shadow: 0 0 5px rgba(232, 74, 96, 0.5); /* Sombra ao focar */
+}
+
+.search-button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  background-color: #1b2845; /* Cor do botão */
+  color: white;
+  cursor: pointer;
+  margin-left: 10px; /* Espaço entre a barra de busca e o botão */
+  transition: background-color 0.3s, transform 0.2s; /* Transições suaves */
+}
+
+.search-button:hover {
+  background-color: #65afff; /* Cor ao passar o mouse */
+  transform: scale(1.05); /* Efeito de zoom */
+}
+
+nav {
+  margin: 15px 0;
+  font-family: "Anton", sans-serif;
+}
+
+nav a {
+    margin: 0 15px;
+    color: #000000;
+    text-decoration: none;
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    transition: color 0.3s, transform 0.3s;
+    position: relative; /* Para efeito de sublinhado */
+}
+
+nav a:hover {
+    color: #65afff;
+    transform: scale(1.05);
+}
+
+nav a:hover::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #65afff; /* Azul claro */
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s;
+}
+
+.container {
+  max-width: 1200px; /* Largura máxima */
+  margin: auto; /* Centraliza o container */
+  padding: 20px;
+}
+
+.product-detail {
+  display: flex; /* Layout flexível */
+  align-items: center; /* Alinha itens verticalmente */
+  margin: 20px 0; /* Espaço em torno do detalhe do produto */
+  background-color: #fff; /* Fundo branco */
+  border-radius: 5px; /* Bordas arredondadas */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  padding: 15px; /* Espaço interno */
+}
+
+.product-detail img {
+  max-width: 300px; /* Largura máxima da imagem do produto */
+  margin-right: 20px; /* Espaço à direita */
+  border-radius: 5px; /* Bordas arredondadas */
+  transition: transform 0.3s; /* Transição para efeito de zoom */
+}
+
+.product-detail img:hover {
+  transform: scale(1.1); /* Aumenta o zoom da imagem */
+}
+
+.product-info {
+  flex: 1; /* Preenche o espaço restante */
+}
+
+.price {
+  font-size: 28px; /* Tamanho da fonte do preço */
+  color: #28a745; /* Cor verde */
+  font-weight: bold; /* Negrito */
+}
+
+.original-price {
+  text-decoration: line-through; /* Riscado */
+  color: #ff0000; /* Cor vermelha */
+  margin-left: 10px; /* Espaço à esquerda */
+}
+
+.reviews {
+  margin: 20px 0; /* Espaço em torno das avaliações */
+}
+
+.review {
+  background: #fff; /* Fundo branco */
+  border: 1px solid #ddd; /* Borda leve */
+  border-radius: 5px; /* Bordas arredondadas */
+  padding: 15px; /* Espaço interno */
+  margin-bottom: 15px; /* Espaço abaixo */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  transition: background-color 0.3s; /* Transição suave */
+}
+
+.review:hover {
+  background-color: #f9f9f9; /* Fundo ao passar o mouse */
+}
+
+.review-author {
+  font-weight: bold; /* Negrito para autor */
+  font-size: 1.1em; /* Tamanho da fonte maior */
+}
+
+.rating {
+  color: #ffd700; /* Cor das estrelas */
+}
+
+.review-form {
+  background: #fff; /* Fundo branco */
+  padding: 20px; /* Espaço interno */
+  border-radius: 5px; /* Bordas arredondadas */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  margin-top: 20px; /* Espaço acima */
+}
+
+.review-form label {
+  display: block; /* Exibição em bloco */
+  margin: 10px 0 5px; /* Margem em torno do rótulo */
+  font-weight: bold; /* Negrito */
+}
+
+.review-form input,
+.review-form select,
+.review-form textarea {
+  width: 100%; /* Largura total */
+  padding: 10px; /* Espaço interno */
+  border: 1px solid #ccc; /* Borda padrão */
+  border-radius: 4px; /* Bordas arredondadas */
+  margin-bottom: 15px; /* Espaço abaixo */
+  transition: border-color 0.3s; /* Transição suave */
+}
+
+.review-form input:focus,
+.review-form select:focus,
+.review-form textarea:focus {
+  border-color: #e84a60; /* Borda ao focar */
+  outline: none; /* Remove contorno padrão */
+  box-shadow: 0 0 5px rgba(232, 74, 96, 0.5); /* Sombra ao focar */
+}
+
+.review-form button {
+  padding: 10px 15px; /* Espaço interno do botão */
+  background: #e84a60; /* Cor do botão */
+  color: white; /* Cor do texto */
+  border: none; /* Remove borda */
+  border-radius: 4px; /* Bordas arredondadas */
+  cursor: pointer; /* Mão ao passar o mouse */
+  transition: background-color 0.3s, transform 0.2s; /* Transições suaves */
+}
+
+.review-form button:hover {
+  background: #65afff; /* Cor ao passar o mouse */
+  transform: scale(1.05); /* Efeito de zoom */
+}
+
+footer {
+  background: #333; /* Cor de fundo do rodapé */
+  color: #fff; /* Cor do texto */
+  text-align: center; /* Centraliza o texto */
+  padding: 15px; /* Espaço interno */
+  position: relative; /* Posição relativa */
+  bottom: 0; /* Alinha ao fundo */
+  width: 100%; /* Largura total */
+  margin-top: 20px; /* Espaço acima */
+}
+
+footer p {
+  margin: 5px 0; /* Margem em torno dos parágrafos */
+}
+
+footer a {
+  color: #65afff; /* Cor dos links no rodapé */
+  text-decoration: none; /* Remove sublinhado */
+}
+
+footer a:hover {
+  text-decoration: underline; /* Sublinhado ao passar o mouse */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  nav a {
+    display: block; /* Coloca os links em coluna em telas menores */
+    margin: 5px 0;
+  }
+
+  .product-detail {
+    flex-direction: column; /* Alinha os elementos em coluna em telas menores */
+    align-items: flex-start; /* Alinhamento à esquerda */
+  }
+
+  .product-detail img {
+    margin-bottom: 10px; /* Espaço abaixo da imagem */
+  }
+
+  form button {
+    width: 100%; /* Botão ocupa toda a largura em telas menores */
+  }
+}
+
+.login-icon {
+  width: 50px; /* Ajuste o tamanho da bolinha */
+  height: 50px; /* Ajuste o tamanho da bolinha */
+  background-color: #FFFF; /* Cor da bolinha */
+  border-radius: 50%; /* Faz a bolinha ser redonda */
+  display: inline-block; /* Para alinhar corretamente */
+  position: relative; /* Para posicionar ícones dentro da bolinha, se necessário */
+  cursor: pointer; /* Para indicar que é clicável */
+  margin-left: 50px;
+}
+
+/* Adicione um ícone dentro da bolinha, se necessário */
+.login-icon::before {
+  content: '\f007'; /* Código Unicode para um ícone de usuário (pode variar conforme a fonte) */
+  font-family: 'Font Awesome 5 Free'; /* Use Font Awesome ou outra biblioteca de ícones */
+  font-weight: 900; /* Estilo do ícone */
+  color: rgb(0, 0, 0); /* Cor do ícone */
+  position: absolute; /* Para centralizar o ícone */
+  top: 50%; /* Centraliza verticalmente */
+  left: 50%; /* Centraliza horizontalmente */
+  transform: translate(-50%, -50%); /* Centraliza o ícone */
+}
+
+.cart-icon {
+  width: 50px; /* Ajuste o tamanho da bolinha */
+  height: 50px; /* Ajuste o tamanho da bolinha */
+  background-color: #FFFF; /* Cor da bolinha */
+  border-radius: 50%; /* Faz a bolinha ser redonda */
+  display: inline-block; /* Para alinhar corretamente */
+  position: relative; /* Para posicionar ícones dentro da bolinha, se necessário */
+  cursor: pointer; /* Para indicar que é clicável */
+  margin-left: 20px; /* Espaçamento à esquerda do ícone */
+}
+
+/* Adicione um ícone dentro da bolinha, se necessário */
+.cart-icon::before {
+  content: '\f07a'; /* Código Unicode para um ícone de carrinho (pode variar conforme a fonte) */
+  font-family: 'Font Awesome 5 Free'; /* Use Font Awesome ou outra biblioteca de ícones */
+  font-weight: 900; /* Estilo do ícone */
+  color: rgb(0, 0, 0); /* Cor do ícone */
+  position: absolute; /* Para centralizar o ícone */
+  top: 50%; /* Centraliza verticalmente */
+  left: 50%; /* Centraliza horizontalmente */
+  transform: translate(-50%, -50%); /* Centraliza o ícone */
+}

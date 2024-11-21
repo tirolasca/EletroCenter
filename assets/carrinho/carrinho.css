@@ -1,0 +1,197 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 0;
+    background-color: #1B2845;
+    height: 100%;
+    overflow-x: hidden;
+    margin: 0;
+}
+
+header {
+    background: #e84a60;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+h1 {
+    color: white;
+}
+
+nav {
+    margin: 15px 0;
+}
+
+nav a {
+    margin: 0 15px;
+    color: #000000;
+    text-decoration: none;
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    transition: color 0.3s, transform 0.3s;
+    position: relative; /* Para efeito de sublinhado */
+}
+
+nav a:hover {
+    color: #65afff;
+    transform: scale(1.05);
+}
+
+nav a:hover::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #65afff; /* Azul claro */
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s;
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 150px; /* Ajuste a largura conforme necessário */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+.cart-item {
+    display: flex; /* Permite que a imagem e os detalhes fiquem lado a lado */
+    align-items: center; /* Alinha os itens verticalmente */
+    margin-bottom: 20px; /* Espaço entre os itens */
+}
+
+
+.cart-item {
+    display: flex;
+    height: auto; /* Mantém a proporção da imagem */
+    align-items: center;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-right:15px; /* Espaço entre a imagem e os detalhes */
+}
+
+.cart-item img {
+    width: 100px;
+    height: auto;
+    margin-right: 15px;
+}
+
+.item-price {
+    font-size: 20px;
+    color: #e74c3c;
+}
+
+.item-quantity {
+    font-size: 16px;
+    color: #555;
+}
+
+.total {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.cart-item {
+    position: relative; /* Permite posicionar elementos dentro */
+    margin: 25px 0;
+}
+
+.select-checkbox {
+    position: absolute;
+    top: 8px; /* Ajuste conforme necessário */
+    right: 10px; /* Ajuste conforme necessário */
+    cursor: pointer;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+.item-details {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    margin: left 7px;
+}
+.remove-item {
+    margin-left: 10px;
+    cursor: pointer;
+}
+.select-checkbox {
+    cursor: pointer;
+}
+.quantity-button {
+    padding: 1px 8px;
+    cursor: pointer;
+}
+.total h2 {
+    font-size: 24px;
+}
+
+.payment {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.checkout-button {
+    padding: 10px 20px;
+    background-color: #e84a60;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.checkout-button:hover {
+    background-color: #65afff;
+    transform: translateY(-2px);
+}
+
+footer {
+    background-color: #e84a60;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 40px;
+}
+
+h2 {
+    color: white;
+}
+
+.remove-item {
+    margin-left: auto; /* Empurra o botão de remover para a direita */
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px; /* Espaço acima do botão de remover */
+}
+
+.remove-item:hover {
+    text-decoration: underline;
+}
+

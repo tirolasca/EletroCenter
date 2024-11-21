@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Usuário - Loja de Eletrônicos</title>
+    <link rel="stylesheet" href="Perfil.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="http://127.0.0.1:5500/EletroCenter(atualizado)/Homepage/homepage.html">
+                <img src="logo2.jpg" alt="Logo" class="logo">
+            </a>
+            <nav>
+                <a href="http://127.0.0.1:5500/EletroCenter(atualizado)/produtos/produtos.html">Produtos</a>
+                <a href="http://127.0.0.1:5500/EletroCenter(atualizado)/produtos/produtos.html">Promoção</a>
+                <a href="http://127.0.0.1:5500/EletroCenter(atualizado)/Parceiros/Parceiros.html">Parceiros</a>
+                <a href="http://127.0.0.1:5500/EletroCenter(atualizado)/Suporte/Suporte.html">Suporte</a>
+                <a href="http://127.0.0.1:5500/EletroCenter(atualizado)/Sobre%20N%C3%B3s/SobreN%C3%B3s.html">Sobre Nós</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>Perfil do Usuário</h1>
+
+        <section class="section">
+            <h2>Informações Pessoais</h2>
+            <div class="user-info">
+                <div>
+                    <p id="user-name"><strong>Nome:</strong> <span>João da Silva</span></p>
+                    <p id="user-email"><strong>E-mail:</strong> <span>joao@email.com</span></p>
+                </div>
+                <div>
+                    <p id="user-phone"><strong>Telefone:</strong> <span>(11) 99999-9999</span></p>
+                    <p id="user-address"><strong>Endereço:</strong> <span>Rua Exemplo, 123, São Paulo - SP</span></p>
+                </div>
+            </div>
+            <button class="button" id="edit-button">Editar Perfil</button>
+        </section>
+
+        <section class="section">
+            <h2>Histórico de Compras</h2>
+            <ul>
+                <li>Smartphone X - R$ 1.999,00</li>
+                <li>Laptop Y - R$ 3.499,00</li>
+                <li>Câmera Z - R$ 1.200,00</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Favoritos</h2>
+            <ul id="favorites-list">
+                <!-- Os favoritos serão inseridos aqui -->
+            </ul>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Loja de Eletrônicos | <a href="/Sobre Nós/SobreNós.html">Sobre Nós</a></p>
+    </footer>
+
+    <script>
+        // Função para carregar informações do localStorage e atualizar a interface
+        function loadUserInfo() {
+            const savedInfo = JSON.parse(localStorage.getItem("userInfo")) || {
+                name: "João da Silva",
+                email: "joao@email.com",
+                phone: "(11) 99999-9999",
+                address: "Rua Exemplo, 123, São Paulo - SP"
+            };
+
+            document.getElementById("user-name").querySelector("span").textContent = savedInfo.name;
+            document.getElementById("user-email").querySelector("span").textContent = savedInfo.email;
+            document.getElementById("user-phone").querySelector("span").textContent = savedInfo.phone;
+            document.getElementById("user-address").querySelector("span").textContent = savedInfo.address;
+        }
+
+        // Função para alternar entre edição e visualização do perfil
+        function toggleEditMode() {
+            const editButton = document.getElementById("edit-button");
+            const isEditing = document.body.classList.toggle("editing");
+
+            if (isEditing) {
+                editButton.textContent = "Salvar";
+                document.querySelectorAll(".user-info p").forEach(p => {
+                    const fieldValue = p.querySelector("span").textContent;
+                    const input = document.createElement("input");
+                    input.type = "text";
+                    input.value = fieldValue;
+                    input.dataset.field = p.id;
+
+                    p.replaceChild(input, p.querySelector("span"));
+                });
+            } else {
+                const userInfo = {
+                    name: document.querySelector("input[data-field='user-name']").value,
+                    email: document.querySelector("input[data-field='user-email']").value,
+                    phone: document.querySelector("input[data-field='user-phone']").value,
+                    address: document.querySelector("input[data-field='user-address']").value
+                };
+
+                localStorage.setItem("userInfo", JSON.stringify(userInfo));
+                loadUserInfo();
+                editButton.textContent = "Editar Perfil";
+            }
+        }
+
+        // Carrega as informações ao iniciar a página
+        document.addEventListener("DOMContentLoaded", loadUserInfo);
+        document.getElementById("edit-button").addEventListener("click", toggleEditMode);
+
+        // Função para carregar favoritos do localStorage e exibi-los no perfil
+        function loadFavorites() {
+            const favoritesList = document.getElementById('favorites-list');
+            const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+        
+            favoritesList.innerHTML = ''; // Limpa a lista atual de favoritos
+        
+            if (favorites.length > 0) {
+                favorites.forEach(item => {
+                    const listItem = document.createElement('li');
+                    listItem.innerHTML = `
+                        <img src="${item.image}" alt="${item.name}" style="width: 50px; height: auto; margin-right: 10px;">
+                        ${item.name} - R$ ${item.price.toFixed(2)} 
+                        <button onclick="removeFavorite('${item.id}')">Remover</button>
+                    `;
+                    favoritesList.appendChild(listItem);
+                });
+            } else {
+                favoritesList.innerHTML = '<p>Nenhum item nos favoritos.</p>';
+            }
+        }
+
+        // Função para remover um favorito pelo ID
+        function removeFavorite(id) {
+            let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+            favorites = favorites.filter(item => item.id !== id);
+            localStorage.setItem('favorites', JSON.stringify(favorites));
+            loadFavorites();
+        }
+
+        // Carrega os favoritos ao abrir o perfil do usuário
+        document.addEventListener('DOMContentLoaded', loadFavorites);
+    </script>
+</body>
+</html>

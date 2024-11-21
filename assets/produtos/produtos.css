@@ -1,0 +1,315 @@
+/* Estilos Gerais */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #1b2845;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: #ffffff;
+  text-align: center;
+  margin: 30px 0;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Cabeçalho */
+header {
+  background-color: #e84a60;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.logo {
+  height: 70px;
+  margin-right: 20px;
+}
+
+/* Navegação */
+nav {
+  margin: 15px 0;
+}
+
+nav a {
+  margin: 0 15px;
+  color: #000000;
+  text-decoration: none;
+  font-family: 'Anton', sans-serif;
+  font-weight: 400;
+  transition: color 0.3s, transform 0.3s;
+  position: relative;
+}
+
+nav a:hover {
+  color: #65afff;
+  transform: scale(1.1);
+}
+
+nav a:hover::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: #65afff;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  transition: width 0.3s;
+}
+
+/* Container Principal */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Lista de Produtos */
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-around;
+}
+
+/* Estilo do Produto */
+.product {
+  background-color: #fff;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  width: 300px;
+  text-align: center;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+
+.product:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+}
+
+.product img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s;
+}
+
+.product:hover img {
+  transform: scale(1.1);
+}
+
+/* Detalhes do Produto */
+.product-details {
+  padding: 15px;
+}
+
+.product h2 {
+  font-size: 1.5rem;
+  margin: 0 0 10px;
+  color: #333;
+  text-transform: uppercase;
+}
+
+.product p {
+  font-size: 1rem;
+  color: #555;
+  margin: 0 0 15px;
+}
+
+.product .price {
+  font-size: 1.25rem;
+  color: #e91e63;
+  margin: 0 0 15px;
+  font-weight: bold;
+}
+
+/* Botão de Compra */
+.product button {
+  background-color: #e91e63;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.5s ease, transform 0.2s, box-shadow 0.3s;
+  font-size: 1rem;
+}
+
+.product button:hover {
+  background-color: #00a2ff;
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Rodapé */
+footer {
+  background-color: #e84a60;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .product-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product {
+    width: 90%;
+  }
+}
+
+/* Ícones de Login e Carrinho */
+.login-icon, .cart-icon {
+  width: 50px;
+  height: 50px;
+  background-color: #FFFF;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  margin-left: 50px;
+}
+
+.login-icon::before, .cart-icon::before {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  color: rgb(0, 0, 0);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.login-icon::before {
+  content: '\f007';
+}
+
+.cart-icon::before {
+  content: '\f07a';
+}
+
+/* Botão de Busca */
+.search-button {
+  padding: 10px;
+  border: 1px solid #000;
+  border-left: none;
+  border-radius: 0 4px 4px 0;
+  background-color: #1b2845;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.search-button:hover {
+  background-color: #65afff;
+  transform: translateY(-2px);
+}
+
+.search-input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+  width: 500px;
+}
+
+/* Filtros */
+.filters {
+  display: none;
+  margin: 20px 0;
+  padding: 20px;
+  background-color: #e84a60;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  transition: max-height 0.3s ease-in-out;
+  max-height: 0;
+  overflow: hidden;
+}
+
+/* Título e Etiquetas */
+.filters h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* Ajustando os grupos de filtro */
+.filter-group {
+  margin-bottom: 15px;
+}
+
+.filters label {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* Ajuste nos selects */
+.filters select {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 5px;
+  background-color: #fff;
+  color: #333;
+  font-size: 1rem;
+}
+
+/* Botão de filtro */
+.filters button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 15px;
+  background-color: #00a2ff;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.filters button:hover {
+  background-color: #0056b3;
+  transform: translateY(-3px);
+}
+
+/* Botão de Toggle dos Filtros */
+.filter-toggle-button {
+  background-color: #00a2ff;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.filter-toggle-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-3px);
+}
+
+/* Transição suave para mostrar/ocultar os filtros */
+#filters.show {
+  display: block;
+  max-height: 500px; /* Ajuste conforme necessário */
+  transition: max-height 0.3s ease-in-out;
+}
