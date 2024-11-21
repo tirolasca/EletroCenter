@@ -1,109 +1,248 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Área de suporte para ajudar nossos clientes."
+    />
+    <meta name="keywords" content="suporte, contato, FAQ" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="Suporte.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link rel="stylesheet" href="Suporte.css" />
     <title>Área de Suporte</title>
-    <script>
-        function toggleFaq(faqItem) {
-            const answer = faqItem.querySelector("p");
-            answer.style.display = answer.style.display === "none" ? "block" : "none";
-        }
-    </script>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <div class="header-content">
-            <a href="http://127.0.0.1:5500/Homepage/homepage.html">
-                <img src="/Suporte/Logo2.jpg" alt="Logo" />
-            </a>
-            <input class="search-input" type="text" placeholder="Pesquisar..." aria-label="Pesquisar">
-            <button class="search-button" type="submit">Buscar</button>
-            <div class="login-icon" title="Login"></div>
-            <div id="cart-icon" class="cart-icon">
-            <!-- Ícone de carrinho -->
+      <div class="header-content">
+        <a href="http://127.0.0.1:5500/Homepage/homepage.html">
+          <img src="./Logo2.jpg" alt="Logo" class="Logo" />
+        </a>
+        <div class="icon-container">
+          <div
+            class="login-icon"
+            title="Login"
+            aria-label="Login"
+            role="button"
+            data-tooltip="Login"
+          ></div>
+          <div
+            id="cart-icon"
+            class="cart-icon"
+            title="Carrinho"
+            aria-label="Carrinho"
+            role="button"
+            data-tooltip="Carrinho"
+          ></div>
         </div>
-        <nav>
-            <a href="http://127.0.0.1:5500/produtos/produtos.html">Produtos</a>
-            <a href="http://127.0.0.1:5500/produtos/produtos.html">Promoção</a>
-            <a href="http://127.0.0.1:5500/Parceiros/Parceiros.html">Parceiros</a>
-            <a href="http://127.0.0.1:5500/Suporte/Suporte.html">Suporte</a>
-            <a href="http://127.0.0.1:5500/Sobre%20N%C3%B3s/SobreN%C3%B3s.html">Sobre Nós</a>
-        </nav>
+      </div>
+      <nav>
+        <a href="http://127.0.0.1:5500/produtos/produtos.html">Produtos</a>
+        <a href="http://127.0.0.1:5500/produtos/produtos.html">Promoção</a>
+        <a href="http://127.0.0.1:5500/Parceiros/Parceiros.html">Parceiros</a>
+        <a href="http://127.0.0.1:5500/Suporte/Suporte.html">Suporte</a>
+        <a href="http://127.0.0.1:5500/Sobre%20N%C3%B3s/SobreN%C3%B3s.html"
+          >Sobre Nós</a
+        >
+      </nav>
     </header>
-
-    <div class="container">
-        <h2>Entre em contato conosco</h2>
-        <form action="#" method="post">
-            <label for="name">Nome:</label>
-            <input type="text" id="name" name="name" required />
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required />
-
-            <label for="message">Mensagem:</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-
-            <button type="submit">Enviar</button>
-        </form>
-
-        <div class="faq">
-            <h2>Perguntas Frequentes (FAQ)</h2>
-
-            <div class="faq-item" onclick="toggleFaq(this)">
-                <h3>Como posso recuperar minha senha?</h3>
-                <p style="display: none;">Para recuperar sua senha, clique no link "Esqueceu a senha?" na página de login e siga as instruções.</p>
-            </div>
-
-            <div class="faq-item" onclick="toggleFaq(this)">
-                <h3>Quais são os horários de atendimento?</h3>
-                <p style="display: none;">Nossa equipe de suporte está disponível de segunda a sexta-feira, das 9h às 18h.</p>
-            </div>
-
-            <div class="faq-item" onclick="toggleFaq(this)">
-                <h3>Como faço para cancelar minha assinatura?</h3>
-                <p style="display: none;">Para cancelar sua assinatura, acesse sua conta, vá até as configurações de assinatura e selecione "Cancelar assinatura".</p>
-            </div>
+    <main class="container">
+      <h1>Entre em contato conosco</h1>
+      <form action="#" method="post" id="contact-form">
+        <label for="name">Nome:</label>
+        <div class="input-icon">
+          <i class="fas fa-user"></i>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Seu nome"
+            required
+          />
         </div>
-    </div>
-    <script src="Script.js"></script>
+
+        <label for="email">Email:</label>
+        <div class="input-icon">
+          <i class="fas fa-envelope"></i>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Seu email"
+            required
+          />
+        </div>
+
+        <label for="message">Mensagem:</label>
+        <div class="input-icon clips">
+          <i class="material-icons">attachment</i>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            placeholder="Sua mensagem"
+            required
+          ></textarea>
+        </div>
+
+       <br> <br><button type="submit" id="submit-button">Enviar</button>
+      </form>
+      <div
+        id="form-feedback"
+        class="form-message success"
+        style="display: none"
+      >
+        Mensagem enviada com sucesso!
+      </div>
+      <div id="form-error" class="form-message error" style="display: none">
+        Erro ao enviar mensagem. Tente novamente.
+      </div>
+
+      <div class="faq">
+        <h2>Perguntas Frequentes (FAQ)</h2>
+        <div class="faq-item">
+          <h3 onclick="toggleFaq(this)" aria-expanded="false" tabindex="0">
+            Como posso recuperar minha senha?
+          </h3>
+          <p class="faq-answer">
+            Para recuperar sua senha, clique no link "Esqueceu a senha?" na
+            página de login e siga as instruções.
+          </p>
+        </div>
+        <div class="faq-item">
+          <h3 onclick="toggleFaq(this)" aria-expanded="false" tabindex="0">
+            Quais são os horários de atendimento?
+          </h3>
+          <p class="faq-answer">
+            Nossa equipe de suporte está disponível de segunda a sexta-feira,
+            das 9h às 18h.
+          </p>
+        </div>
+        <div class="faq-item">
+          <h3 onclick="toggleFaq(this)" aria-expanded="false" tabindex="0">
+            Como posso entrar em contato com o suporte?
+          </h3>
+          <p class="faq-answer">
+            Você pode entrar em contato com o suporte através do nosso e-mail ou
+            pelo chat disponível em nosso site.
+          </p>
+        </div>
+        <button onclick="toggleAllFaqs()">Expandir/Contrair Todas</button>
+      </div>
+    </main>
+    <a href="mailto:suporte@exemplo.com" class="floating-button">📧</a>
+
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-          // Adiciona o evento de submit ao formulário
-          document
-            .getElementById("loginForm")
-            .addEventListener("submit", function (event) {
-              event.preventDefault(); // Impede o envio do formulário
-  
-              const emailInput = document.getElementById("email").value; // Obtém o valor do email
-  
-              // Exibe a mensagem de boas-vindas
-              const welcomeMessage = document.getElementById("welcomeMessage");
-              welcomeMessage.textContent = `Bem-vindo, ${emailInput}!`;
-              welcomeMessage.style.display = "block"; // Torna a mensagem visível
-  
-              // Opcional: Limpar o formulário
-              document.getElementById("loginForm").reset();
-            });
+      document.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById("contact-form");
+        const feedback = document.getElementById("form-feedback");
+        const error = document.getElementById("form-error");
+        const submitButton = document.getElementById("submit-button"); // Referência para o botão
+
+        form.addEventListener("submit", (event) => {
+          event.preventDefault();
+          const nameValue = form.name.value;
+          const emailValue = form.email.value;
+
+          const loader = document.createElement("div");
+          loader.textContent = "Enviando...";
+          loader.className = "loader";
+          document.body.appendChild(loader);
+
+          setTimeout(() => {
+            loader.remove();
+            if (validateName(nameValue) && validateEmail(emailValue)) {
+              feedback.style.display = "block";
+              error.style.display = "none";
+              form.reset();
+            } else {
+              error.style.display = "block";
+              feedback.style.display = "none";
+            }
+          }, 2000); // Simulação de 2 segundos
         });
-        document.querySelector('.login-icon').addEventListener('click', function() {
-          window.location.href = "http://127.0.0.1:5500/Login/Login.html"; // URL da página de login
-      });
-  
-      document.addEventListener("DOMContentLoaded", function() {
-          // Seleciona o ícone do carrinho
-          const cartIcon = document.getElementById("cart-icon");
-          
-          // Adiciona um evento de clique ao ícone do carrinho
-          cartIcon.addEventListener("click", function() {
-              // Redireciona para a página do carrinho
-              window.location.href = "http://127.0.0.1:5500/carrinho/carrinho.html"; // Substitua pelo URL correto
+
+        submitButton.addEventListener("click", () => {
+          // Listener para o clique do botão
+          submitButton.style.backgroundColor = "#4caf50"; // Muda para verde
+          submitButton.textContent = "Enviado!";
+          setTimeout(() => {
+            submitButton.style.backgroundColor = "#e91e63"; // Retorna à cor original
+            submitButton.textContent = "Enviar";
+          }, 2000);
+        });
+
+        const inputs = [form.name, form.email]; // Coletando os inputs para validação
+        inputs.forEach((input) => {
+          input.addEventListener("input", function () {
+            if (validateEmail(this.value)) {
+              this.classList.remove("invalid");
+              this.classList.add("valid");
+            } else {
+              this.classList.remove("valid");
+              this.classList.add("invalid");
+            }
           });
+        });
       });
-      </script>
-</body>
+
+      function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(String(email).toLowerCase());
+      }
+
+      function validateName(name) {
+        return name.trim() !== "";
+      }
+
+      function toggleFaq(h3Element) {
+        const answer = h3Element.nextElementSibling;
+        const isExpanded = answer.style.maxHeight;
+
+        answer.style.maxHeight = isExpanded ? null : answer.scrollHeight + "px";
+        answer.style.opacity = isExpanded ? 0 : 1;
+        h3Element.setAttribute("aria-expanded", !isExpanded);
+      }
+
+      function toggleAllFaqs() {
+        const answers = document.querySelectorAll(".faq-answer");
+        const headers = document.querySelectorAll(".faq-item h3");
+        const shouldExpand = Array.from(answers).some(
+          (answer) => !answer.style.maxHeight
+        );
+
+        answers.forEach((answer) => {
+          answer.style.maxHeight = shouldExpand
+            ? answer.scrollHeight + "px"
+            : null;
+          answer.style.opacity = shouldExpand ? 1 : 0;
+        });
+
+        headers.forEach((h3Element) => {
+          h3Element.setAttribute("aria-expanded", shouldExpand);
+        });
+      }
+
+      document.querySelector(".login-icon").addEventListener("click", () => {
+        window.location.href = "http://127.0.0.1:5500/Login/Login.html";
+      });
+
+      document.getElementById("cart-icon").addEventListener("click", () => {
+        window.location.href = "http://127.0.0.1:5500/carrinho/carrinho.html";
+      });
+    </script>
+  </body>
 </html>
