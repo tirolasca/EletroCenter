@@ -1,0 +1,196 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #1b2845;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  color: white;
+}
+
+header {
+  background-color: #e84a60;
+  text-align: center;
+  padding: 15px;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: white;
+}
+
+p {
+  color: white;
+  font-weight: bold;
+}
+
+nav {
+  margin: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav a {
+  margin: 0 15px;
+  color: #000;
+  text-decoration: none;
+  font-family: "Anton", sans-serif;
+  transition: color 0.3s, transform 0.3s;
+  position: relative; /* Para efeito de sublinhado */
+}
+
+nav a:hover {
+  color: #65afff; /* Azul fraco no hover */
+  transform: scale(1.05);
+}
+
+nav a:hover::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #65afff; /* Azul claro */
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.logo {
+  height: 60px;
+  width: 160px;
+  padding-right: 15px;
+  animation: fadeIn 1s ease-in;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 15px;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.cart-item.visible {
+  opacity: 1;
+}
+
+.cart-item img {
+  width: 100px;
+  height: auto;
+  margin-right: 15px;
+}
+
+.item-price {
+  font-size: 20px;
+  color: #e74c3c;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.quantity-button {
+  padding: 5px 10px;
+  cursor: pointer;
+  background-color: #e84a60;
+  border: none;
+  color: white;
+  border-radius: 5px;
+}
+
+.quantity-button:hover {
+  background-color: #65afff;
+}
+
+.remove-item {
+  margin-left: auto; /* Empurra o botão de remover para a direita */
+  background-color: red;
+  color: white;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px; /* Espaço acima do botão de remover */
+}
+
+.remove-item:hover {
+  text-decoration: underline;
+}
+
+.item-quantity {
+  font-size: 16px;
+  color: #555;
+}
+
+.total {
+  text-align: right;
+  margin-top: 20px;
+  font-size: 24px;
+}
+
+.item-details {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.select-checkbox {
+    cursor: pointer;
+    margin-left: 20px;
+  }
+
+.payment {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.checkout-button {
+  padding: 10px 20px;
+  background-color: #e84a60;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.checkout-button:hover {
+  background-color: #65afff;
+  transform: translateY(-2px);
+}
+
+footer {
+  background-color: #e84a60;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 40px;
+}

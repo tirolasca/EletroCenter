@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="stylesheet" href="produtos.css" />
+    <title>Loja de Produtos</title>
+  </head>
+  <body>
+    <header>
+      <a href="http://127.0.0.1:5500/Homepage/Homepage.html">
+        <img src="Logo2.jpg" alt="Logo" class="logo" />
+      </a>
+
+      <div class="search-container">
+        <input type="text" class="search-input" placeholder="Pesquisar..." />
+        <button class="search-button">Buscar</button>
+      </div>
+      <div
+        class="login-icon"
+        title="Login"
+        aria-label="Login"
+        role="button"
+        data-tooltip="Login"
+      ></div>
+      <div
+        id="cart-icon"
+        class="cart-icon"
+        title="Carrinho"
+        aria-label="Carrinho"
+        role="button"
+        data-tooltip="Carrinho"
+      ></div>
+      <!-- Ícone de carrinho -->
+
+      <nav>
+        <a href="/produtos/produtos.html">Produtos</a>
+        <a href="/produtos/produtos.html">Promoção</a>
+        <a href="/Parceiros/Parceiros.html">Parceiros</a>
+        <a href="/Suporte/Suporte.html">Suporte</a>
+        <a href="/Sobre Nós/SobreNós.html">Sobre Nós</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Botão de Filtro -->
+      <div class="container">
+        <button class="filter-toggle-button" onclick="toggleFilters()">
+          Mostrar Filtros
+        </button>
+
+        <!-- Filtros -->
+        <div class="filters" id="filters">
+          <h2>Filtros</h2>
+
+          <div class="filter-group">
+            <label for="categoria">Categoria</label>
+            <select id="categoria">
+              <option value="">Selecione</option>
+              <option value="monitor">Monitor</option>
+              <option value="gabinete">Gabinete</option>
+              <!-- Adicione outras opções aqui -->
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="preco">Faixa de Preço</label>
+            <select id="preco">
+              <option value="">Selecione</option>
+              <option value="50-100">R$50 - R$100</option>
+              <option value="150-200">R$150 - R$200</option>
+              <!-- Adicione outras opções aqui -->
+            </select>
+          </div>
+
+          <!-- Outros filtros podem ser adicionados aqui com a mesma estrutura -->
+          <button onclick="applyFilters()">Aplicar Filtros</button>
+        </div>
+
+        <h1>Produtos</h1>
+        <div class="container">
+          <div class="product-list">
+            <div
+              class="product"
+              data-category="monitor"
+              data-price="100"
+              data-availability="available"
+            >
+              <img src="monitor_acer_27.png" alt="Monitor Acer" />
+              <div class="product-details">
+                <h2>Monitor Acer</h2>
+                <div class="price">R$ 100,00</div>
+                <a href="/detalhe do produto2/detalhe2.html"
+                  ><button>Detalhes</button></a
+                >
+              </div>
+            </div>
+            <div
+              class="product"
+              data-category="gabinete"
+              data-price="150"
+              data-availability="available"
+            >
+              <img src="gabinete_rgb.jpg" alt="Gabinete RGB" />
+              <div class="product-details">
+                <h2>Gabinete RGB</h2>
+                <div class="price">R$ 150,00</div>
+                <a href="/detalhe do produto/detalhe.html"
+                  ><button>Detalhes</button></a
+                >
+              </div>
+            </div>
+            <!-- Adicione mais produtos conforme necessário -->
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 EletroCenter. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document
+          .querySelector(".login-icon")
+          .addEventListener("click", function () {
+            window.location.href = "/Perfil/Perfil.html"; // URL da página de login
+          });
+
+        const cartIcon = document.getElementById("cart-icon");
+        cartIcon.addEventListener("click", function () {
+          window.location.href = "/carrinho/carrinho.html"; // URL do carrinho
+        });
+      });
+
+      function toggleFilters() {
+        const filters = document.getElementById("filters");
+        filters.classList.toggle("show");
+      }
+
+      function applyFilters() {
+        const categoryFilter = document.getElementById("categoria").value;
+        const priceFilter = document.getElementById("preco").value;
+
+        const products = document.querySelectorAll(".product");
+
+        products.forEach((product) => {
+          const productCategory = product.getAttribute("data-category");
+          const productPrice = parseInt(product.getAttribute("data-price"), 10);
+
+          let isVisible = true;
+
+          // Filtra por categoria
+          if (categoryFilter && productCategory !== categoryFilter) {
+            isVisible = false;
+          }
+
+          // Filtra por faixa de preço
+          if (priceFilter) {
+            const [minPrice, maxPrice] = priceFilter.split("-").map(Number);
+            if (productPrice < minPrice || productPrice > maxPrice) {
+              isVisible = false;
+            }
+          }
+
+          // Mostra ou esconde o produto
+          product.style.display = isVisible ? "block" : "none";
+        });
+      }
+    </script>
+  </body>
+</html>

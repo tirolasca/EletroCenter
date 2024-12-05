@@ -1,135 +1,192 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Detalhes do Produto</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="detalhe.css">
-</head>
-<body>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="stylesheet" href="detalhe.css" />
+  </head>
+  <body>
     <header>
-        <div class="header-content">
-            <a href="http://127.0.0.1:5500/EletroCenter(atualizado)/Homepage/homepage.html">
-                <img src="Logo2.jpg" alt="Logo" />
-            </a>
-            <div class="login-icon" title="Login"></div>
-            <div id="cart-icon" class="cart-icon"></div>
-        </div>
-        <nav>
-            <a href="http://127.0.0.1:5500/EletroCenter(atualizado)/produtos/produtos.html">Produtos</a>
-            <a href="http://127.0.0.1:5500/EletroCenter(atualizado)/produtos/produtos.html">Promoção</a>
-            <a href="http://127.0.0.1:5500/EletroCenter(atualizado)/Parceiros/Parceiros.html">Parceiros</a>
-            <a href="http://127.0.0.1:5500/EletroCenter(atualizado)/Suporte/Suporte.html">Suporte</a>
-            <a href="http://127.0.0.1:5500/EletroCenter(atualizado)/Sobre%20N%C3%B3s/SobreN%C3%B3s.html">Sobre Nós</a>
-        </nav>
+      <div class="header-content">
+        <a href="/Homepage/homepage.html">
+          <img src="Logo2.jpg" alt="Logo" class="Logo" />
+        </a>
+      </div>
+
+      <nav>
+        <a href="/produtos/produtos.html">Produtos</a>
+        <a href="/produtos/produtos.html">Promoção</a>
+        <a href="/Parceiros/Parceiros.html">Parceiros</a>
+        <a href="/Suporte/Suporte.html">Suporte</a>
+        <a href="/Sobre Nós/SobreNós.html">Sobre Nós</a>
+      </nav>
+
+      <div class="icon-container">
+        <div
+          class="login-icon"
+          title="Login"
+          aria-label="Login"
+          role="button"
+          data-tooltip="Login"
+        ></div>
+        <div
+          id="cart-icon"
+          class="cart-icon"
+          title="Carrinho"
+          aria-label="Carrinho"
+          role="button"
+          data-tooltip="Carrinho"
+        ></div>
+      </div>
     </header>
 
     <div class="container">
-        <div class="produto" data-id="3" data-name="Gabinete RGB" data-price="150" data-image="/produtos/gabinete_rgb.jpg">
-            <div class="star-icon" title="Avaliação"></div>
-            <div class="heart-icon" title="Adicionar aos Favoritos"></div>
-            <h1>Gabinete RGB</h1>
-            <div class="product img"><img src="/produtos/gabinete_rgb.jpg" alt="Gabinete RGB" /></div>
-            <h2><strong>Preço:</strong> R$ 150,00</h2>
-            <p><strong><h2>Descrição:</h2></strong> Com os Computadores Gamer com a marca ITX GAMER, você pode confiar, produzidos com os melhores componentes!</p>
-            <ul>
-                <li>Marca: ITX Gamer</li>
-                <li>Sistema operacional: Windows 11 Trial</li>
-                <li>Modelo da CPU: Ryzen 5</li>
-                <li>Velocidade da CPU: 3,9 GHz</li>
-                <li>Cache: 16 GB</li>
-                <li>Placa de vídeo: Integrada</li>
-                <li>Armazenamento: 480 GB SSD</li>
-                <li>Uso: Jogos</li>
-                <li>Tipo de design: Torre</li>
-                <li>Tamanho da tela: 2,5 Polegadas</li>
-            </ul>
-            <a class="botao" href="#" id="add-to-cart">Adicionar ao Carrinho</a>
+      <div
+        class="produto"
+        data-id="3"
+        data-name="Gabinete RGB"
+        data-price="150"
+        data-image="/produtos/gabinete_rgb.jpg"
+      >
+        <!-- Ícone de Estrela com tooltip -->
+        <div
+          class="star-icon"
+          title="Avaliar Produto"
+          aria-label="Avaliar Produto"
+          data-tooltip="Avaliar Produto"
+        ></div>
+
+        <!-- Ícone de Coração com tooltip -->
+        <div
+          class="heart-icon"
+          title="Adicionar aos Favoritos"
+          aria-label="Adicionar aos Favoritos"
+          data-tooltip="Adicionar aos Favoritos"
+        ></div>
+
+        <h1>Gabinete RGB</h1>
+        <div class="product img">
+          <img src="/produtos/gabinete_rgb.jpg" alt="Gabinete RGB" />
         </div>
+        <h2><strong>Preço:</strong> R$ 150,00</h2>
+        <p>
+          <strong><h2>Descrição:</h2></strong> Com os Computadores Gamer com a
+          marca ITX GAMER, você pode confiar, produzidos com os melhores
+          componentes!
+        </p>
+        <ul>
+          <li>Marca: ITX Gamer</li>
+          <li>Sistema operacional: Windows 11 Trial</li>
+          <li>Modelo da CPU: Ryzen 5</li>
+          <li>Velocidade da CPU: 3,9 GHz</li>
+          <li>Cache: 16 GB</li>
+          <li>Placa de vídeo: Integrada</li>
+          <li>Armazenamento: 480 GB SSD</li>
+          <li>Uso: Jogos</li>
+          <li>Tipo de design: Torre</li>
+          <li>Tamanho da tela: 2,5 Polegadas</li>
+        </ul>
+        <a class="botao" href="#" id="add-to-cart">Adicionar ao Carrinho</a>
+      </div>
     </div>
-    
+
     <footer>
-        <p>© 2024 Loja de Eletrônicos. Todos os direitos reservados.</p>
+      <p>© 2024 Loja de Eletrônicos. Todos os direitos reservados.</p>
     </footer>
 
     <script>
-        // Função para adicionar produto ao localStorage
-        function addToCart(product) {
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
-            cart.push(product);
-            localStorage.setItem('cart', JSON.stringify(cart));
-            alert(product.name + ' foi adicionado ao carrinho.');
-        }
+      // Função para adicionar produto ao localStorage
+      function addToCart(product) {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        cart.push(product);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        alert(product.name + " foi adicionado ao carrinho.");
+      }
 
-        // Captura os detalhes do produto ao clicar no botão
-        document.getElementById('add-to-cart').addEventListener('click', function(event) {
-            event.preventDefault();
+      // Captura os detalhes do produto ao clicar no botão
+      document
+        .getElementById("add-to-cart")
+        .addEventListener("click", function (event) {
+          event.preventDefault();
 
-            const productElement = document.querySelector('.produto');
-            const product = {
-                id: productElement.getAttribute('data-id'),
-                name: productElement.getAttribute('data-name'),
-                price: productElement.getAttribute('data-price'),
-                image: productElement.getAttribute('data-image'),
-                quantity: 1
-            };
+          const productElement = document.querySelector(".produto");
+          const product = {
+            id: productElement.getAttribute("data-id"),
+            name: productElement.getAttribute("data-name"),
+            price: productElement.getAttribute("data-price"),
+            image: productElement.getAttribute("data-image"),
+            quantity: 1,
+          };
 
-            addToCart(product);
+          addToCart(product);
         });
     </script>
 
     <script>
-        document.querySelector('.login-icon').addEventListener('click', function() {
-            window.location.href = "/Login/Login.html"; 
+      document
+        .querySelector(".login-icon")
+        .addEventListener("click", function () {
+          window.location.href = "/Login/Login.html";
         });
 
-        document.addEventListener("DOMContentLoaded", function() {
-            const cartIcon = document.getElementById("cart-icon");
-            cartIcon.addEventListener("click", function() {
-                window.location.href = "/carrinho/carrinho.html"; 
-            });
+      document.addEventListener("DOMContentLoaded", function () {
+        const cartIcon = document.getElementById("cart-icon");
+        cartIcon.addEventListener("click", function () {
+          window.location.href = "/carrinho/carrinho.html";
         });
-    </script>
-
-    <script>
-      document.querySelector('.star-icon').addEventListener('click', function() {
-        window.location.href = "/Avaliação/Avaliação.html";
       });
     </script>
 
     <script>
-        // Função para adicionar produtos aos favoritos
-        function addToFavorites(product) {
-            let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-            const isAlreadyFavorite = favorites.some(item => item.id === product.id);
-
-            if (!isAlreadyFavorite) {
-                favorites.push(product);
-                localStorage.setItem('favorites', JSON.stringify(favorites));
-                alert(product.name + ' foi adicionado aos favoritos.');
-            } else {
-                alert(product.name + ' já está nos favoritos.');
-            }
-        }
-
-        // Captura os detalhes do produto ao clicar no ícone de coração
-        document.querySelector('.heart-icon').addEventListener('click', function() {
-            const productElement = document.querySelector('.produto');
-            const product = {
-                id: productElement.getAttribute('data-id'),
-                name: productElement.getAttribute('data-name'),
-                price: parseFloat(productElement.getAttribute('data-price')),
-                image: productElement.getAttribute('data-image')
-            };
-
-            addToFavorites(product);
+      document
+        .querySelector(".star-icon")
+        .addEventListener("click", function () {
+          window.location.href = "/Avaliação/Avaliação.html";
         });
-        
     </script>
-</body>
+
+    <script>
+      // Função para adicionar produtos aos favoritos
+      function addToFavorites(product) {
+        let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+        const isAlreadyFavorite = favorites.some(
+          (item) => item.id === product.id
+        );
+
+        if (!isAlreadyFavorite) {
+          favorites.push(product);
+          localStorage.setItem("favorites", JSON.stringify(favorites));
+          alert(product.name + " foi adicionado aos favoritos.");
+        } else {
+          alert(product.name + " já está nos favoritos.");
+        }
+      }
+
+      // Captura os detalhes do produto ao clicar no ícone de coração
+      document
+        .querySelector(".heart-icon")
+        .addEventListener("click", function () {
+          const productElement = document.querySelector(".produto");
+          const product = {
+            id: productElement.getAttribute("data-id"),
+            name: productElement.getAttribute("data-name"),
+            price: parseFloat(productElement.getAttribute("data-price")),
+            image: productElement.getAttribute("data-image"),
+          };
+
+          addToFavorites(product);
+        });
+    </script>
+  </body>
 </html>

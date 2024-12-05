@@ -3,10 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
     <link rel="stylesheet" href="Avaliação2.css" />
     <!-- Link para o CSS externo -->
     <title>Avaliação do Produto</title>
@@ -14,36 +20,62 @@
   <body>
     <header>
       <div class="header-content">
-        <a href="http://127.0.0.1:5500/EletroCenter(atualizado)/Homepage/homepage.html">
-          <img src="/Avaliação/Logo2.jpg" alt="Logo" />
+        <a href="/Homepage/homepage.html">
+          <img src="Logo2.jpg" alt="Logo" class="Logo" />
         </a>
-        <input class="search-input" type="text" placeholder="Pesquisar..." aria-label="Pesquisar"/>
+        <input
+          class="search-input"
+          type="text"
+          placeholder="Pesquisar..."
+          aria-label="Pesquisar"
+        />
         <button class="search-button" type="submit">Buscar</button>
-        <div class="login-icon" title="Login"></div>
-        <div id="cart-icon" class="cart-icon">
+        <div class="icon-container">
+          <div
+            class="login-icon"
+            title="Login"
+            aria-label="Login"
+            role="button"
+            data-tooltip="Login"
+          ></div>
+          <div
+            id="cart-icon"
+            class="cart-icon"
+            title="Carrinho"
+            aria-label="Carrinho"
+            role="button"
+            data-tooltip="Carrinho"
+          ></div>
         </div>
       </div>
       <nav>
-        <a href="http://127.0.0.1:5500/EletroCenter(atualizado)/produtos/produtos.html">Produtos</a>
-        <a href="http://127.0.0.1:5500/EletroCenter(atualizado)/produtos/produtos.html">Promoção</a>
-        <a href="http://127.0.0.1:5500/EletroCenter(atualizado)/Parceiros/Parceiros.html">Parceiros</a>
-        <a href="http://127.0.0.1:5500/EletroCenter(atualizado)/Suporte/Suporte.html">Suporte</a>
-        <a href="http://127.0.0.1:5500/EletroCenter(atualizado)/Sobre%20N%C3%B3s/SobreN%C3%B3s.html">Sobre Nós</a>
-    </nav>
+        <a href="http://127.0.0.1:5500/Produtos/Produtos.html">Produtos</a>
+        <a href="http://127.0.0.1:5500/Produtos/Produtos.html">Promoção</a>
+        <a href="http://127.0.0.1:5500/Parceiros/Parceiros.html">Parceiros</a>
+        <a href="http://127.0.0.1:5500/Suporte/Suporte.html">Suporte</a>
+        <a href="http://127.0.0.1:5500/Sobre%20N%C3%B3s/SobreN%C3%B3s.html"
+          >Sobre Nós</a
+        >
+      </nav>
     </header>
 
     <div class="container">
       <h2>Avaliação do Produto: Monitor Acer 27</h2>
 
       <div class="product-detail">
-        <img src="/Homepage/PRODUTOS/monitor_acer_27.png" alt="PC Gamer Completo" />
+        <img
+          src="/Homepage/PRODUTOS/monitor_acer_27.png"
+          alt="PC Gamer Completo"
+        />
         <div class="product-info">
           <h3>Monitor Acer 27</h3>
-          <p class="price">
-            R$ 100,00
-          </p>
+          <p class="price">R$ 100,00</p>
           <p>
-            Descrição do produto:  Acer Adaptive Contrast Management: O Acer Adaptive Contrast Management (ACM) otimiza o contraste para oferecer o mais alto nível de clareza e detalhe, analisando todas as cenas, ajustando as imagens quadro a quadro e aprimorando detalhes e graduação.
+            Descrição do produto: Acer Adaptive Contrast Management: O Acer
+            Adaptive Contrast Management (ACM) otimiza o contraste para oferecer
+            o mais alto nível de clareza e detalhe, analisando todas as cenas,
+            ajustando as imagens quadro a quadro e aprimorando detalhes e
+            graduação.
           </p>
         </div>
       </div>
@@ -89,20 +121,22 @@
     </footer>
     <script src="Script.js"></script>
     <script>
-      document.querySelector('.login-icon').addEventListener('click', function() {
+      document
+        .querySelector(".login-icon")
+        .addEventListener("click", function () {
           window.location.href = "/Login/Login.html"; // URL da página de login
+        });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // Seleciona o ícone do carrinho
+        const cartIcon = document.getElementById("cart-icon");
+
+        // Adiciona um evento de clique ao ícone do carrinho
+        cartIcon.addEventListener("click", function () {
+          // Redireciona para a página do carrinho
+          window.location.href = "/carrinho/carrinho.html"; // Substitua pelo URL correto
+        });
       });
-  
-      document.addEventListener("DOMContentLoaded", function() {
-          // Seleciona o ícone do carrinho
-          const cartIcon = document.getElementById("cart-icon");
-          
-          // Adiciona um evento de clique ao ícone do carrinho
-          cartIcon.addEventListener("click", function() {
-              // Redireciona para a página do carrinho
-              window.location.href = "/carrinho/carrinho.html"; // Substitua pelo URL correto
-          });
-      });
-  </script>
+    </script>
   </body>
 </html>
